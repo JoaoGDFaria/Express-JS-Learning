@@ -1,0 +1,59 @@
+extends layout 
+
+block content 
+
+    .w3-card-4 
+        header.w3-container.w3-blue
+            h2 Contrato #{contrato._id}
+    
+    .w3-container
+        p 
+            b ID:
+            | #{contrato._id}
+        
+        p 
+            b Anúncio:
+            | #{contrato.nAnuncio}
+        
+        p 
+            b Tipo de Procedimento:
+            | #{contrato.tipoprocedimento}
+        
+        p 
+            b Objecto do Contrato:
+            | #{contrato.objectoContrato}
+        
+        p 
+            b Data de Publicação:
+            | #{new Date(contrato.dataPublicacao).toLocaleDateString('pt-PT')}
+        
+        p 
+            b Data de Celebração do Contrato:
+            | #{new Date(contrato.dataCelebracaoContrato).toLocaleDateString('pt-PT')}
+        
+        p 
+            b Preço Contratual:
+            | #{contrato.precoContratual}
+        
+        p 
+            b Prazo de Execução:
+            | #{contrato.prazoExecucao} dias
+        
+        p 
+            b NIPC da Entidade Comunicante:
+            | #{contrato.NIPC_entidade_comunicante}
+        
+        p 
+            b Entidade Comunicante:
+            | #{contrato.entidade_comunicante}
+        
+        p 
+            b Fundamentação:
+            | #{contrato.fundamentacao}
+
+    .w3-container
+        a.w3-button.w3-blue(href='/') Voltar à Lista de Contratos
+
+    footer.w3-container.w3-teal
+        h5 
+            span Created by JoaoGDFaria in 2024

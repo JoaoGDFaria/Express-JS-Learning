@@ -1,0 +1,31 @@
+extends layout 
+
+block content 
+    .w3-card-4 
+        header.w3-container.w3-blue
+            h2 #{contratos[0].NIPC_entidade_comunicante} - #{contratos[0].entidade_comunicante}
+            h2 Valor total dos contratos celebrados: #{somatorioValoresContratos} € 
+        
+    .w3-container
+
+        table.w3-table-all 
+            tr
+                th ID Contrato
+                th Objecto do Contrato
+                th Data de Celebração do Contrato
+                th Preço Contratual
+
+            each contrato in contratos
+                tr
+                    td 
+                        a(href='/' + contrato._id) #{contrato._id}
+                    td= contrato.objectoContrato
+                    td= contrato.dataCelebracaoContrato
+                    td= contrato.precoContratual
+    
+    .w3-container
+        a.w3-button.w3-blue(href='/') Voltar à Lista de Contratos
+
+    footer.w3-container.w3-teal
+        h5 
+            span Created by JoaoGDFaria in 2024 
